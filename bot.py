@@ -1,4 +1,4 @@
-import telebot,time
+import telebot
 
 from telebot import types 
 
