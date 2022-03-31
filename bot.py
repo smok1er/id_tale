@@ -1,5 +1,6 @@
 import telebot
-
+import flask
+from flask import FLASK
 from telebot import types 
 
 Z = '\033[1;31m' #احمر
@@ -18,6 +19,7 @@ B = '\033[2;36m'#سمائي
 
 Y = '\033[1;34m' #ازرق فاتح
 
+server = Flask(__name__)
 token = "5134782801:AAFSEsM-00Ink4Jsz0Q2g4tOZ9cOZ8Ea3Hg"
 
 bot = telebot.TeleBot(token)
@@ -45,7 +47,12 @@ def info(message):
 def start1(message):
 
   bot.send_message(message.chat.id,"*To Get id send* /id\n\n*BY : @HarithTools*",parse_mode='markdown')
-
+@server.route(f"/{token}", methods=["POST"])
+def redirect_message():
+    json_string = request.get_data().decode("utf-8")
+    update = telebot.types.Update.de_json(json_string)
+    bot.process_new_updates([update])
+    return "!", 200
 if __name__ == "__main__":
     bot.remove_webhook()
     bot.set_webhook(url="https://telebot-id.herokuapp.com/"+str(token))
