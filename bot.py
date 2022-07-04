@@ -1,6 +1,6 @@
 import telebot
 import flask
-from flask import FLASK
+from flask import Flask
 from telebot import types 
 
 Z = '\033[1;31m' #احمر
