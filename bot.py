@@ -20,7 +20,7 @@ B = '\033[2;36m'#سمائي
 Y = '\033[1;34m' #ازرق فاتح
 
 server = Flask(__name__)
-token = "5134782801:AAFSEsM-00Ink4Jsz0Q2g4tOZ9cOZ8Ea3Hg"
+token = "5590751236:AAGjlo8vQE2TKLEUGcuxLWcgYI1B6z1k7Is"
 
 bot = telebot.TeleBot(token)
 
@@ -55,6 +55,6 @@ def redirect_message():
     return "!", 200
 if __name__ == "__main__":
     bot.remove_webhook()
-    bot.set_webhook(url="https://telebot-id.herokuapp.com/"+str(token))
+    bot.set_webhook(url="https://n_iid.herokuapp.com/"+str(token))
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 bot.infinity_polling()
