@@ -28,7 +28,7 @@ bot = telebot.TeleBot(token)
 
 def start(message):
 
-  bot.send_message(message.chat.id,"*Welcome to the bot to know your account ID Telegram to know your account ID send* /id\n\n*BY :* @HarithTools",parse_mode='markdown')
+  bot.send_message(message.chat.id,"*مرحبا ويهلا تريد تعرف شخص عن طريق الايدي ؟وصلت* /id\n\n*BY :* @C_P_8",parse_mode='markdown')
 
 @bot.message_handler(commands=['id'])
 
@@ -40,13 +40,13 @@ def id(message):
 
 def info(message):
 
-  bot.send_message(message.chat.id,f"*With this bot, you can get the ID of your Telegram account By sending* /id\n\n*BY :* @HarithTools",parse_mode='markdown')
+  bot.send_message(message.chat.id,f"*مرحبا ويهلا تريد تعرف شخص عن طريق الايدي ؟وصلت* /id\n\n*BY :* @C_P_8",parse_mode='markdown')
 
 @bot.message_handler(content_types=['text'])
 
 def start1(message):
 
-  bot.send_message(message.chat.id,"*To Get id send* /id\n\n*BY : @HarithTools*",parse_mode='markdown')
+  bot.send_message(message.chat.id,"*يلا خيي دز ايدي* /id\n\n*BY : @C_P_8*",parse_mode='markdown')
 @server.route(f"/{token}", methods=["POST"])
 def redirect_message():
     json_string = request.get_data().decode("utf-8")
